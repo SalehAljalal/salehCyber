@@ -1,0 +1,126 @@
+find client
+______________________________________________
+package Clstrips;
+
+import java.util.ArrayList;
+public class clsFindClient extends clsTitleScreen
+{
+   
+    
+    public static void FindClient()
+    {   
+        ArrayList<clsDataClient>AllClient=clsDataClient.GetListClients();
+        String NameClient=clsinputValidate.ReadString("Enter Client Name: ");
+        
+        if(AllClient.size()==0)
+            System.out.println("No Clients Available in the System !");
+        
+        else
+        {
+            for(clsDataClient Client:AllClient)
+            {
+                if(NameClient.equals(Client.getName()))
+                {
+                    clsShowListClientScreen. Header();
+                    clsShowListClientScreen.PrintClient(Client);
+                     break;
+                }
+            }}
+    }
+}
+
+
+____________________________________________________________________________
+
+
+find Employee
+
+
+package Clstrips;
+import java.util.ArrayList;
+
+public class clsFindEmployee 
+{
+   
+    public static void FindEmployee()
+    {
+      ArrayList<clsEmployeesInfo>AllEmployee=clsEmployeesInfo._LoadEmployees(); 
+      String NameEmp=clsinputValidate.ReadString("Enter Name of Employee ? ");
+       
+      
+      if(AllEmployee.size()==0)
+      {
+          System.out.println("No Employee Availble in The System !");
+      }
+   
+      else{
+      
+          for (clsEmployeesInfo Emp:AllEmployee)
+         {
+          if(NameEmp.equals(Emp.getName()))
+          {
+              clsShowListEmployees. Header();
+              clsShowListEmployees.PrintInfo(Emp);
+               break;
+          }
+          }
+         }
+
+        
+        
+}}
+
+
+______________________________________________________________________________________________
+
+
+find trip
+
+
+
+package Clstrips;
+import java.util.ArrayList;
+
+
+public class clsFindTrip {
+    
+    
+
+    
+    public static void FindTrip()
+    {
+          ArrayList<clsTripInfo>AllTrips=clsMnaageTrip.GetlistTrips();
+         
+          String NameTripe=clsinputValidate.ReadString("Enter Name of Country To See When It: ");
+          if(AllTrips.size()==0)
+              System.out.println("No Trips Availble In the System");
+          
+          else
+          {
+              for(clsTripInfo trip:AllTrips)
+              {
+                  if(NameTripe.equals(trip.getCountry()))
+                  {
+                      clsShowlistTrips.Header();
+                      clsShowlistTrips.PrintTrips(trip);
+                      
+                      break;
+                  }
+              }
+              
+          }
+  
+}}
+
+_____________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
